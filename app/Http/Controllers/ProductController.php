@@ -164,15 +164,15 @@ class ProductController extends Controller
             
 
             $price = new ProductVariantPrice();
-            if($firstKey)
+            if($firstKey == null)
             {
                 $price->product_variant_one = $variationList[$firstKey]['firstKey'];
             }
-            if($sceondKey)
+            if($sceondKey == null)
             {
                 $price->product_variant_two = $variationList[$sceondKey]['firstKey'];
             }
-            if($thirdKey)
+            if($thirdKey == null)
             {
                 $price->product_variant_three = $variationList[$thirdKey]['firstKey'];
             }
