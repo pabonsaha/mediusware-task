@@ -5,11 +5,12 @@ var indexs = [];
 $(document).ready(function () {
     addVariantTemplate();
     $("#file-upload").dropzone({
-        url: "{{ route('file-upload') }}",
+        url: "/dropzone",
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         method: "post",
         addRemoveLinks: true,
         success: function (file, response) {
-            //
+            
         },
         error: function (file, response) {
             //
